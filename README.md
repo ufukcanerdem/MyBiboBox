@@ -3,7 +3,7 @@ A file server that enables multiple clients to connect, access  and modify the c
 
 The project includes two files called biboServer.c and biboClient.c to create a file system as server-client.
 
-Server-Side
+# Server-Side
 After the server side works, it listens to the client over FIFO. According to the connect 
 requests from the client, the child processes are forked for the clients. It creates a special 
 FIFO path for each client. Then it receives requests and sends responses over this FIFO
@@ -15,7 +15,7 @@ The last important point we can mention is the use of shared memory in upload an
 download tasks. The file to be uploaded or downloaded is kept by the shared memory and 
 optionally moved to the target folder.
 
-Client-Side
+# Client-Side
 As soon as the client is started, it sends a request to connect to the server via FIFO, 
 according to the first command it receives. There is not much we can mention about other 
 than using shared memory while uploading and downloading tasks and maybe when ctrl-c 
